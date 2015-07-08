@@ -39,8 +39,8 @@ app.get('/', function(req, res, next){
                         link = url + element.last().attr('href');
 
                         jsonList.historicalEvent.push({ 
-                            "title" : date,
-                            "date"  : title,
+                            "date" : date,
+                            "title"  : title,
                             "link"  : link
                         });
                     }
