@@ -6,7 +6,7 @@ var app     = express();
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8081;
 // set the view engine to ejs
 //app.set('view engine', 'ejs');
 //app.use(express.static(__dirname));
@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get('/scrape', function(req, res, next){
+app.get('/', function(req, res, next){
     
     url = 'http://www.history.com/this-day-in-history';
 
@@ -57,7 +57,6 @@ app.get('/scrape', function(req, res, next){
         res.header('Content-type','application/json');
         res.header('Charset','utf8');
         res.jsonp(jsonList);
-        res.send('hello');
     })
 })
 
